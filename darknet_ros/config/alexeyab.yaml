@@ -1,0 +1,20 @@
+yolo_model:
+
+  config_file:
+    name: alexeyab.cfg
+  weight_file:
+    name: alexeyab.weights
+  threshold:
+    value: 0.3
+  detection_classes:
+    names:
+      - Water dipper
+      - Broom
+      - Tiffin carrier
+      - Sticky rice basket
+      - Dish cover
+      - Colander
+      - Prickly heat powder
+      - Fanning woven
+      - Chamber pot
+      - Back scratcher
