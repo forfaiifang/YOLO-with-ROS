@@ -79,4 +79,4 @@ I have tested *darknet_ros* with my project to detect Thai household objects on 
 
 ![image](https://user-images.githubusercontent.com/59696434/81466953-9cb4bd00-91ff-11ea-9382-e0b48c1b834c.png)
 
-here are weights file that I used to detect Thai household object  [weight files1](https://emailpsuac-my.sharepoint.com/:u:/g/personal/5910110212_email_psu_ac_th/EVd4XHuqqfNJnFfH14nf8zIBaaKyG_ec0aCedLD4N6BqLg), [weights file2](https://emailpsuac-my.sharepoint.com/:u:/g/personal/5910110212_email_psu_ac_th/Eafp--Eme5BEhD3FHJ-kArkBK4U7oHOF7-br6-erwXs1Nw)
+here are weights file that I used to detect Thai household object [[weight files1](https://emailpsuac-my.sharepoint.com/:u:/g/personal/5910110212_email_psu_ac_th/EVd4XHuqqfNJnFfH14nf8zIBaaKyG_ec0aCedLD4N6BqLg), [weights file2](https://emailpsuac-my.sharepoint.com/:u:/g/personal/5910110212_email_psu_ac_th/Eafp--Eme5BEhD3FHJ-kArkBK4U7oHOF7-br6-erwXs1Nw)]
