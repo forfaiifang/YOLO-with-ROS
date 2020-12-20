@@ -323,68 +323,7 @@ detection *YoloObjectDetector::avgPredictions(network *net, int *nboxes)
   detection *dets = get_network_boxes(net, buff_[0].w, buff_[0].h, demoThresh_, demoHier_, 0, 1, nboxes);
   return dets;
 }
-//*******************************************************************************************
-// copied from image.c
-int i,j;
-for(i = 0; i < nboxes; ++i)
-{
- char labelstr[4096] = {0};
- int type = -1;
- for(j = 0; j < demoClasses_; ++j)
- {
- if (dets[i].prob[j] > demoThresh_){
- if (type < 0) {
- strcat(labelstr, demoNames_[j]);
- type = j;
- } else {
- strcat(labelstr, “, “);
- strcat(labelstr, demoNames_[j]);
- }
- printf(“%s: %.0f%%\n”, demoNames_[j], dets[i].prob[j]*100);
- }
- }
- if(type >= 0) {
- int width = disp_img.h * .006;
-/*
- if(0){
- width = pow(prob, 1./2.)*10+1;
- alphabet = 0;
- }
- */
-//printf(“%d %s: %.0f%%\n”, i, names[class], prob*100);
- int offset = type * 123457 % demoClasses_;
- float red = get_color(2, offset, demoClasses_);
- float green = get_color(1, offset, demoClasses_);
- float blue = get_color(0, offset, demoClasses_);
- float rgb[3];
-//width = prob*20+2;
-rgb[0] = red;
- rgb[1] = green;
- rgb[2] = blue;
- box b = dets[i].bbox;
- //printf(“%f %f %f %f\n”, b.x, b.y, b.w, b.h);
-int left = (b.x-b.w/2.) * disp_img.w;
- int right = (b.x+b.w/2.) * disp_img.w;
- int top = (b.y-b.h/2.) * disp_img.h;
- int bot = (b.y+b.h/2.) * disp_img.h;
-if(left < 0) left = 0;
- if(right > disp_img.w-1) right = disp_img.w-1;
- if(top < 0) {
- top = 0;
- }
- if(bot > disp_img.h-1) {
- bot = disp_img.h-1;
- }
-char buf[10];
- snprintf(buf, 10, “%d”, bot);
- strcat(labelstr, “, dist : “);
- strcat(labelstr, buf);
- strcat(labelstr, “ pix “);
-printf(“%s \n”, labelstr);
- 
- }
-}
-//**************************************************************************************
+
 void *YoloObjectDetector::detectInThread()
 {
   running_ = 1;
